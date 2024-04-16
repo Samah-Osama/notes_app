@@ -13,7 +13,9 @@ class NoteApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {NotesView.id: (context) => NotesView()},
       initialRoute: NotesView.id,
-      theme: ThemeData(brightness: Brightness.dark),
+      theme: ThemeData(
+          brightness: Brightness.dark,
+          scaffoldBackgroundColor: Color(0xFF303030)),
     );
   }
 }
