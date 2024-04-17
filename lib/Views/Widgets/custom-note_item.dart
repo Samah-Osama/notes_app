@@ -6,7 +6,7 @@ class NoteItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Color.fromARGB(255, 214, 200, 76),
+        color: Colors.blue[100],
         borderRadius: BorderRadius.circular(16),
       ),
       child: Padding(
@@ -17,7 +17,7 @@ class NoteItem extends StatelessWidget {
             ListTile(
               title: const Text(
                 'Flutter Tips',
-                style: TextStyle(color: Colors.black, fontSize: 30),
+                style: TextStyle(color: Colors.black, fontSize: 25),
               ),
               subtitle: Padding(
                 padding: const EdgeInsets.only(top: 15),
@@ -25,7 +25,7 @@ class NoteItem extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   'Hello To My World , let me take u to  a journey to the sky ',
                   style: TextStyle(
-                      color: Colors.black.withOpacity(.5), fontSize: 20),
+                      color: Colors.black.withOpacity(.6), fontSize: 18),
                 ),
               ),
               trailing: IconButton(
@@ -44,7 +44,7 @@ class NoteItem extends StatelessWidget {
                 child: Text(
                   'May 21 , 2022',
                   style: TextStyle(
-                      color: Colors.black.withOpacity(.5), fontSize: 17),
+                      color: Colors.black.withOpacity(.6), fontSize: 17),
                 ),
               ),
             ),
