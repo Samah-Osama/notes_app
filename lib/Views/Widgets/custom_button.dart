@@ -10,13 +10,13 @@ class CustomButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: double.infinity,
+        width: MediaQuery.of(context).size.width,
         height: 55,
         decoration: BoxDecoration(
           color: kPrimaryColor,
           borderRadius: BorderRadius.circular(10),
         ),
-        child: Center(
+        child: const Center(
           child: Text(
             'Add',
             style: TextStyle(color: Colors.black, fontSize: 30),
