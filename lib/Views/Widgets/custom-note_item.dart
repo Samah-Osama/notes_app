@@ -9,6 +9,7 @@ class NoteItem extends StatelessWidget {
       onTap: () {
         Navigator.pushNamed(context, EditNotesView.id);
       },
+      
       child: Container(
         decoration: BoxDecoration(
           color: Colors.blue[100],

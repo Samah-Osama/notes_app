@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/constant.dart';
 
 class CustomButton extends StatelessWidget {
-  CustomButton({this.onTap});
-  VoidCallback? onTap;
+ const CustomButton({this.onTap});
+ final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
