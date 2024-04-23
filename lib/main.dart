@@ -9,6 +9,8 @@ void main() async {
   await Hive.initFlutter();
   await Hive.openBox(kNoteBox);
   Hive.registerAdapter(NoteModelAdapter());
+  //here i'm telling Hive that u have notemodel that u need to deal with through NoteModelAdapter  
+  
   runApp(const NoteApp());
 }
 
