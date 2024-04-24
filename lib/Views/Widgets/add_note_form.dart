@@ -42,11 +42,13 @@ class _AddNoteFormState extends State<AddNoteForm> {
           const SizedBox(height: 100),
           CustomButton(
             onTap: () {
+              
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
               } else {
                 autovalidateMode = AutovalidateMode.always;
                 setState(() {});
+                
               }
             },
           )
