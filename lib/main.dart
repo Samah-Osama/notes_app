@@ -29,8 +29,8 @@ class NoteApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         routes: {
-          NotesView.id: (context) => NotesView(),
-          EditNotesView.id: (context) => EditNotesView()
+          NotesView.id: (context) => const NotesView(),
+          EditNotesView.id: (context) => const EditNotesView()
         },
         initialRoute: NotesView.id,
         theme: ThemeData(
