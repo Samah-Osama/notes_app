@@ -12,9 +12,10 @@ class NotesView extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
+            isScrollControlled: true,
               context: context,
               builder: (context) {
-                return AddNoteBottomSheet();
+                return const AddNoteBottomSheet();
               });
         },
         backgroundColor: kPrimaryColor,

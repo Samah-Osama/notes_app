@@ -42,7 +42,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
             hinttext: 'Content',
             maxLines: 5,
           ),
-          const SizedBox(height: 100),
+          const SizedBox(height: 60),
           CustomButton(
             onTap: () {
               if (formKey.currentState!.validate()) {
@@ -58,7 +58,8 @@ class _AddNoteFormState extends State<AddNoteForm> {
                 setState(() {});
               }
             },
-          )
+          ),
+        const SizedBox(height: 30)
         ],
       ),
     );
