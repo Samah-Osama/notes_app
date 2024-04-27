@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/Models/note_model.dart';
 import 'package:notes_app/Views/edit_note_view.dart';
 
 class NoteItem extends StatelessWidget {
-  const NoteItem({super.key});
+  const NoteItem({ 
+    super.key,
+  });
   @override
+  // final List<NoteModel> note;
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         Navigator.pushNamed(context, EditNotesView.id);
       },
-      
       child: Container(
         decoration: BoxDecoration(
           color: Colors.blue[100],
