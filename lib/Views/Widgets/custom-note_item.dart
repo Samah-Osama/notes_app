@@ -3,11 +3,12 @@ import 'package:notes_app/Models/note_model.dart';
 import 'package:notes_app/Views/edit_note_view.dart';
 
 class NoteItem extends StatelessWidget {
-  const NoteItem({ 
+  const NoteItem({
     super.key,
+    required this.note,
   });
   @override
-  // final List<NoteModel> note;
+  final NoteModel note;
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
@@ -15,7 +16,7 @@ class NoteItem extends StatelessWidget {
       },
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.blue[100],
+          color: Color(note.color),
           borderRadius: BorderRadius.circular(16),
         ),
         child: Padding(
@@ -24,15 +25,15 @@ class NoteItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               ListTile(
-                title: const Text(
-                  'Flutter Tips',
-                  style: TextStyle(color: Colors.black, fontSize: 25),
+                title: Text(
+                  note.title,
+                  style: const TextStyle(color: Colors.black, fontSize: 25),
                 ),
                 subtitle: Padding(
                   padding: const EdgeInsets.only(top: 15),
                   child: Text(
                     overflow: TextOverflow.ellipsis,
-                    'Hello To My World , let me take u to  a journey to the sky ',
+                    note.body,
                     style: TextStyle(
                         color: Colors.black.withOpacity(.6), fontSize: 18),
                   ),
@@ -51,7 +52,7 @@ class NoteItem extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(top: 40),
                   child: Text(
-                    'May 21 , 2022',
+                    note.date,
                     style: TextStyle(
                         color: Colors.black.withOpacity(.6), fontSize: 17),
                   ),
