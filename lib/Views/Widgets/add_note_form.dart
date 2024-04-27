@@ -51,7 +51,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
                 var noteModel = NoteModel(
                     title: title!,
                     body: body!,
-                    date: DateFormat('yyyy-mm-dd kk:mm:ss')
+                    date: DateFormat('yyyy-MM-dd kk:ss:mm')
                         .format(DateTime.now()),
                     color: const Color.fromARGB(255, 62, 136, 173).value);
                 BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
