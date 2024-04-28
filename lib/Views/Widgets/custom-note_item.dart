@@ -14,7 +14,7 @@ class NoteItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, EditNotesView.id , arguments: note);
+        Navigator.pushNamed(context, EditNotesView.id, arguments: note);
       },
       child: Container(
         decoration: BoxDecoration(
@@ -34,6 +34,7 @@ class NoteItem extends StatelessWidget {
                 subtitle: Padding(
                   padding: const EdgeInsets.only(top: 15),
                   child: Text(
+                    maxLines: 3,
                     overflow: TextOverflow.ellipsis,
                     note.body,
                     style: TextStyle(
