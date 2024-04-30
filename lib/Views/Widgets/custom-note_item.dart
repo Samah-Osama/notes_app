@@ -38,7 +38,9 @@ class NoteItem extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     note.body,
                     style: TextStyle(
-                        color: Colors.black.withOpacity(.6), fontSize: 18),
+                        color: Colors.black.withOpacity(.6),
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
                 trailing: IconButton(
@@ -60,7 +62,9 @@ class NoteItem extends StatelessWidget {
                   child: Text(
                     note.date,
                     style: TextStyle(
-                        color: Colors.black.withOpacity(.6), fontSize: 17),
+                        color: Colors.black.withOpacity(.6),
+                        fontSize: 17,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
