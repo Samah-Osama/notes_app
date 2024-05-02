@@ -5,6 +5,9 @@ import 'package:notes_app/Views/Widgets/custom_app_bar.dart';
 import 'package:notes_app/Views/Widgets/custom_text_field.dart';
 import 'package:notes_app/cubits/note_cubit/notes_cubit.dart';
 
+import '../../constant.dart';
+import 'custom_colors_list.dart';
+
 class EditNoteViewBody extends StatefulWidget {
   const EditNoteViewBody({super.key, required this.note});
   @override
@@ -19,7 +22,7 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
 
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 50, left: 16, right: 16),
+      padding: const EdgeInsets.only(top: 50, left: 16, right: 16),
       child: Column(
         children: [
           CustomAppBar(
@@ -47,9 +50,53 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
             },
             hinttext: widget.note.body,
             maxLines: 6,
-          )
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          EditNoteColorsList(
+            note: widget.note,
+          ),
         ],
       ),
+    );
+  }
+}
+
+class EditNoteColorsList extends StatefulWidget {
+  const EditNoteColorsList({super.key, required this.note});
+  final NoteModel note;
+  @override
+  State<EditNoteColorsList> createState() => _EditNoteColorsListState();
+}
+
+int currentIndex = 0;
+
+class _EditNoteColorsListState extends State<EditNoteColorsList> {
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 60,
+      child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: kColorsList.length,
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: const EdgeInsets.only(left: 10),
+              child: GestureDetector(
+                onTap: () {
+                  currentIndex = index;
+                  widget.note.color = kColorsList[index].value;
+
+                  setState(() {});
+                },
+                child: ColorItem(
+                  isSelected: currentIndex == index,
+                  colors: kColorsList[index],
+                ),
+              ),
+            );
+          }),
     );
   }
 }
